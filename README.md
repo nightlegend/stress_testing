@@ -1,16 +1,16 @@
 # stress_test
 
-<h1>
+<h3>
 Require:
-</h1>
+</h3>
 
 <pre>
 	golang >= 1.7
 </pre>
 
-<h1>
+<h3>
 	Running:	
-</h1>
+</h3>
 
 <pre>
 	go get
