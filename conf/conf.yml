@@ -1,0 +1,10 @@
+host: localhost
+port: 8012
+times: 4
+rate: 4
+resultPath: D:/SelfStudy/GoProject/data/
+testResulName: testing
+
+requestType: get
+requestPath: /
+requestData: message=hello world!!
