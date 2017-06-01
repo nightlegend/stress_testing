@@ -17,6 +17,7 @@ type Configure struct {
 	RequestType   string        `yaml:"requestType"`
 	RequestPath   string        `yaml:"requestPath"`
 	RequestData   string        `yaml:"requestData"`
+	Timeout       time.Duration `yaml:"timeout"`
 }
 
 func InitConf() (c Configure) {

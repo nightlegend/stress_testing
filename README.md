@@ -2,7 +2,7 @@
 
 <h3>
 Require:
-</h3>
+</h3p>
 
 <pre>
 	golang >= 1.7

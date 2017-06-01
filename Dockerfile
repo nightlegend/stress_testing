@@ -6,7 +6,8 @@ COPY ./ /go/src/stress_test/
 
 WORKDIR /go/src/stress_test/
 
-RUN go get && \
+RUN go get gopkg.in/yaml.v2 && \
+	go get && \
     go build
 
 EXPOSE 80 8089

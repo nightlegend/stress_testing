@@ -3,23 +3,28 @@ package lib
 import (
 	"fmt"
 	vegeta "github.com/tsenart/vegeta/lib"
+	"net/http"
 	"os"
 	"stress_test/conf"
 	"time"
 )
 
 func Post(config conf.Configure) {
-
 	rate := uint64(config.Rate) // per second
+	headers := http.Header{}
+	headers.Add("Content-Type", "application/json")
 	duration := config.Times * time.Second
+	timeout := config.Timeout * time.Second
 	urlStr := "http://" + config.Host + ":" + config.Port + config.RequestPath
 	targeter := vegeta.NewStaticTargeter(vegeta.Target{
 		Method: "POST",
 		URL:    urlStr,
 		Body:   []byte(config.RequestData),
+		Header: headers,
 	})
 
-	attacker := vegeta.NewAttacker()
+	attacker := vegeta.NewAttacker(vegeta.Timeout(timeout))
+
 	var metrics vegeta.Metrics
 	var results vegeta.Results
 	for res := range attacker.Attack(targeter, rate, duration) {

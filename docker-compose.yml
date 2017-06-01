@@ -1,0 +1,7 @@
+stress_test:
+  tty: true
+  command: go run main.go
+  image: docker.cargosmart.com/app/stress_test:latest
+  volumes:
+  - /home/csapp/stress_test/tmp:/go/src/stress_test/tmp
+  - /home/csapp/stress_test/conf/conf.yaml:/go/src/stress_test/conf/conf.yml
