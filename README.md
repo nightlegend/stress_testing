@@ -7,6 +7,44 @@ stress test is build by golang and vegeta. Hope find a good solution privode to 
 
 <a href="https://github.com/tsenart/vegeta">vegeta</a>
 
+# Stress test support methods
+
+> Now only support GET and POST methods.
+
+## GET
+
+### conf.yml
+<code>
+host: 127.0.0.1
+port: 8012
+times: 4
+rate: 4
+timeout: 150
+resultPath: D:/SelfStudy/GoProject/data/
+testResulName: testing
+
+requestType: get
+requestPath: /
+requestData: ''
+</code>
+
+## POST
+
+### conf.yml
+<code>
+host: 127.0.0.1
+port: 8012
+times: 4
+rate: 4
+timeout: 150
+resultPath: D:/SelfStudy/GoProject/data/
+testResulName: testing
+
+requestType: post
+requestPath: /form_post
+requestData: '{"id":"PERM-25-a811-4951-8fef-3057091d8992"}'
+</code>
+
 
 <h2>How to run?</h2>
 
