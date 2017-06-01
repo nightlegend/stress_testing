@@ -51,19 +51,22 @@ stress test is build by golang and vegeta. Hope find a good solution privode to 
 <div>
 
 1. prepare
+
 <pre>
     install golang >= 1.6
 </pre>
 
-
 2. startup
-a. update you configure:
+
+> a. update you configure:
+
 <pre>
 	cd $workdir/conf
 	update conf.yml
 </pre>
 
-b. build and start
+> b. build and start
+
 <pre>
  	cd workdir
  	go get
@@ -78,6 +81,7 @@ b. build and start
 <h3>
 	some result filed explanation:
 </h3>
+
 <pre>
 latencies:      Latencies holds computed request latency metrics.
 earliest:       First is the earliest timestamp in a Result set.
