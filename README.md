@@ -48,38 +48,28 @@ stress test is build by golang and vegeta. Hope find a good solution privode to 
 
 <h2>How to run?</h2>
 
-<div>
-
-1. prepare
+> Running by docker
 
 <pre>
-    install golang >= 1.6
+	1. Docker >= 1.9(if you have not install docker, please reference https://docs.docker.com/v1.12/).
+	2. cd ${work directory}/stress_testing
+	3. docker build -t stress_test:latest
+	4. docker-compose up -d   (if you have not install docker-compose, please reference to https://docs.docker.com/v1.12/compose/install/)
 </pre>
 
-2. startup
-
-> a. update you configure:
+> Add a mount point in docker-compose file
 
 <pre>
-	cd $workdir/conf
-	update conf.yml
+	For convenient to running and find result,better add a volumes.
+	volumes:
+  	 - /home/csapp/stress_test/tmp:/go/src/stress_test/tmp
+     - /home/csapp/stress_test/conf/conf.yaml:/go/src/stress_test/conf/conf.yml
 </pre>
-
-> b. build and start
-
-<pre>
- 	cd workdir
- 	go get
- 	go build main.go
- 	go run main.go
-</pre>
-
-</div>
 
 <hr>
 
 <h3>
-	some result filed explanation:
+	Result filed explanation:
 </h3>
 
 <pre>
